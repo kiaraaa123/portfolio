@@ -1132,3 +1132,25 @@ h3 {
     0 20px 40px rgba(0,0,0,.15),
     0 0 40px rgba(255,240,138,.25);
 }
+
+.stars,
+.shooting-star,
+.shooting-star-2 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars span {
+  z-index: 1;
+  box-shadow: 0 0 12px rgba(255, 240, 138, 0.8);
+}
+
+.constellation::before {
+  z-index: 0;
+}
+
+.skill-node {
+  z-index: 2;
+}
