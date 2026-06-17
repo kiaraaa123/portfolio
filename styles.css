@@ -791,3 +791,51 @@ h3 {
   color: var(--orchid);
 }
 
+/* Force modal tags to be equal width */
+.modal-tools {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.modal-tools li {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(143, 92, 255, 0.12);
+  border: 1px solid rgba(143, 92, 255, 0.18);
+  color: var(--plum);
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-align: center;
+  line-height: 1.1;
+  white-space: normal;
+}
+
+@media (max-width: 620px) {
+  .modal-tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.click-prompt {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 22px;
+  color: var(--plum);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.journey-card:hover .click-prompt {
+  color: var(--orchid);
+}
