@@ -135,3 +135,35 @@ if (modalOverlay && modalContent && modalClose) {
     }
   });
 }
+
+const highlightCards = document.querySelectorAll(".highlight-card");
+
+function burstConfetti(card) {
+  for (let i = 0; i < 18; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+
+    piece.style.left = `${Math.random() * 100}%`;
+    piece.style.background = ["#fff08a", "#8f5cff", "#f4b8c4", "#dce8d4"][i % 4];
+    piece.style.animationDelay = `${Math.random() * 0.15}s`;
+
+    card.appendChild(piece);
+
+    setTimeout(() => {
+      piece.remove();
+    }, 900);
+  }
+}
+
+highlightCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const wasOpen = card.classList.contains("open");
+
+    highlightCards.forEach((item) => item.classList.remove("open"));
+    card.classList.toggle("open", !wasOpen);
+
+    if (!wasOpen) {
+      burstConfetti(card);
+    }
+  });
+});
