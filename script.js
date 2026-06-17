@@ -14,3 +14,22 @@ if (menuToggle && nav) {
     });
   });
 }
+
+const timeline = document.querySelector("[data-timeline]");
+
+if (timeline) {
+  const tabs = timeline.querySelectorAll(".timeline-tab");
+  const panels = timeline.querySelectorAll(".timeline-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const step = Number(tab.dataset.step);
+
+      tabs.forEach((item) => item.classList.remove("active"));
+      panels.forEach((panel) => panel.classList.remove("active"));
+
+      tab.classList.add("active");
+      panels[step].classList.add("active");
+    });
+  });
+}
