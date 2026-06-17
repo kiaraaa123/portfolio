@@ -165,3 +165,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const starsContainer = document.querySelector(".stars");
+
+if (starsContainer) {
+  for (let i = 0; i < 40; i++) {
+    const star = document.createElement("span");
+
+    star.style.setProperty("--x", `${Math.random() * 100}%`);
+    star.style.setProperty("--y", `${Math.random() * 100}%`);
+    star.style.setProperty("--size", Math.random() * 4 + 1);
+
+    starsContainer.appendChild(star);
+  }
+}
