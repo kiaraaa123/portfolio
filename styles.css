@@ -1000,3 +1000,25 @@ h3 {
     width: 100%;
   }
 }
+
+.confetti-piece {
+  position: absolute;
+  top: 18px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  pointer-events: none;
+  animation: confettiFall 850ms ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(130px) rotate(220deg);
+  }
+}
