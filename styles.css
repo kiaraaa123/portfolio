@@ -844,3 +844,159 @@ h3 {
 .journey-card:hover .click-prompt {
   color: var(--orchid);
 }
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.highlight-card {
+  position: relative;
+  min-height: 260px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.highlight-card:hover,
+.highlight-card.open {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.highlight-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: rgba(143, 92, 255, 0.14);
+  font-size: 1.5rem;
+}
+
+.highlight-card p,
+.highlight-details li {
+  color: var(--muted);
+}
+
+.highlight-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms ease;
+}
+
+.highlight-details ul {
+  overflow: hidden;
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.highlight-card.open .highlight-details {
+  grid-template-rows: 1fr;
+}
+
+.toolkit-constellation h2 {
+  max-width: 780px;
+}
+
+.constellation {
+  position: relative;
+  min-height: 520px;
+  margin-top: 34px;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(143, 92, 255, 0.16), transparent 16rem),
+    rgba(58, 37, 88, 0.92);
+  overflow: hidden;
+}
+
+.constellation::before {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border: 1px dashed rgba(255, 247, 237, 0.22);
+  border-radius: 50%;
+}
+
+.skill-node {
+  position: absolute;
+  width: 230px;
+  padding: 20px;
+  border: 1px solid rgba(255, 247, 237, 0.18);
+  border-radius: 24px;
+  background: rgba(255, 247, 237, 0.1);
+  color: var(--cream);
+  backdrop-filter: blur(12px);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.skill-node:hover {
+  transform: scale(1.05);
+  background: rgba(255, 247, 237, 0.18);
+}
+
+.skill-node span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--butter);
+  font-weight: 900;
+}
+
+.skill-node p {
+  margin: 0;
+  color: rgba(255, 247, 237, 0.76);
+  font-size: 0.95rem;
+}
+
+.content-node {
+  top: 56px;
+  left: 70px;
+}
+
+.workflow-node {
+  top: 80px;
+  right: 90px;
+}
+
+.cms-node {
+  bottom: 70px;
+  left: 190px;
+}
+
+.tech-node {
+  bottom: 90px;
+  right: 170px;
+}
+
+@media (max-width: 900px) {
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .constellation {
+    min-height: auto;
+    display: grid;
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .constellation::before {
+    display: none;
+  }
+
+  .skill-node {
+    position: static;
+    width: 100%;
+  }
+}
