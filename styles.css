@@ -1043,13 +1043,11 @@ h3 {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  width: 7px;
-  height: 7px;
-  background: var(--butter);
+  width: calc(var(--size) * 1px);
+  height: calc(var(--size) * 1px);
   border-radius: 50%;
-  box-shadow: 0 0 14px rgba(255, 240, 138, 0.8);
-  animation: twinkle 1.9s ease-in-out infinite;
-  animation-delay: var(--d);
+  background: rgba(255,255,255,.8);
+  animation: twinkle 3s ease-in-out infinite;
 }
 
 .stars span:nth-child(even) {
@@ -1069,4 +1067,68 @@ h3 {
     opacity: 1;
     transform: scale(1.35);
   }
+}
+
+.shooting-star,
+.shooting-star-2 {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,240,138,.9)
+  );
+  opacity: 0;
+}
+
+.shooting-star {
+  top: 25%;
+  left: -10%;
+  animation: shootingStar 10s linear infinite;
+}
+
+.shooting-star-2 {
+  top: 60%;
+  left: -10%;
+  animation: shootingStar 14s linear infinite 4s;
+}
+
+@keyframes shootingStar {
+  0%, 85% {
+    opacity: 0;
+    transform: translateX(0) translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(1200px) translateY(250px);
+  }
+}
+
+.constellation::before {
+  animation: pulseNebula 8s ease-in-out infinite;
+}
+
+@keyframes pulseNebula {
+  0%,100% {
+    transform: scale(1);
+    opacity: .5;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: .8;
+  }
+}
+
+.skill-node:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.15),
+    0 0 40px rgba(255,240,138,.25);
 }
