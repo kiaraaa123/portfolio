@@ -81,6 +81,18 @@ a {
   letter-spacing: -0.04em;
 }
 
+.logo.avatar-logo {
+  overflow: hidden;
+  background: var(--butter);
+  border: 2px solid var(--plum);
+}
+
+.logo.avatar-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .nav {
   display: flex;
   gap: 8px;
