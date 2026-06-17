@@ -794,7 +794,7 @@ h3 {
 /* Force modal tags to be equal width */
 .modal-tools {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 22px;
   padding: 0;
@@ -806,17 +806,22 @@ h3 {
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-width: 0;
   min-height: 44px;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 999px;
   background: rgba(143, 92, 255, 0.12);
   border: 1px solid rgba(143, 92, 255, 0.18);
   color: var(--plum);
   font-weight: 800;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   text-align: center;
-  line-height: 1.1;
-  white-space: normal;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.journey-modal {
+  width: min(48vw, 820px);
 }
 
 @media (max-width: 620px) {
