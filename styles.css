@@ -1038,3 +1038,35 @@ h3 {
 .highlight-card.open .highlight-icon {
   background: var(--butter);
 }
+
+.stars span {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 7px;
+  height: 7px;
+  background: var(--butter);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(255, 240, 138, 0.8);
+  animation: twinkle 1.9s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+
+.stars span:nth-child(even) {
+  width: 4px;
+  height: 4px;
+  background: var(--rose);
+  box-shadow: 0 0 12px rgba(244, 184, 196, 0.8);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
