@@ -1142,9 +1142,33 @@ h3 {
   z-index: 1;
 }
 
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
 .stars span {
-  z-index: 1;
-  box-shadow: 0 0 12px rgba(255, 240, 138, 0.8);
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: calc(var(--size) * 1px);
+  height: calc(var(--size) * 1px);
+  border-radius: 50%;
+  background: var(--butter);
+  box-shadow: 0 0 16px rgba(255, 240, 138, 0.95);
+  opacity: 1;
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+.stars span:nth-child(even) {
+  background: var(--rose);
+  box-shadow: 0 0 14px rgba(244, 184, 196, 0.95);
+}
+
+.skill-node {
+  z-index: 4;
 }
 
 .constellation::before {
