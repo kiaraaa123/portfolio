@@ -170,12 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const starsContainer = document.querySelector(".stars");
 
   if (starsContainer) {
-    for (let i = 0; i < 60; i++) {
+    starsContainer.innerHTML = "";
+
+    for (let i = 0; i < 70; i++) {
       const star = document.createElement("span");
 
       star.style.setProperty("--x", `${Math.random() * 100}%`);
       star.style.setProperty("--y", `${Math.random() * 100}%`);
-      star.style.setProperty("--size", Math.random() * 4 + 1);
+      star.style.setProperty("--size", `${Math.random() * 5 + 2}`);
 
       starsContainer.appendChild(star);
     }
